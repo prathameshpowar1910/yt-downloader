@@ -26,12 +26,16 @@ def download_video(url, save_path, start_time, end_time, sub_text):
         print("Download complete!")
     except Exception as e:
         print("Error:", str(e))
-
+        
+def get_downloads_folder_path():
+    home = os.path.expanduser("~")
+    downloads_folder = os.path.join(home, "Downloads")
+    return downloads_folder
 
 if __name__ == "__main__":
     video_url_1 = input("Enter the first YouTube video URL: ") # https://youtu.be/dQw4w9WgXcQ?feature=shared&t=39
     video_url_2 = input("Enter the second YouTube video URL: ") # https://youtu.be/dQw4w9WgXcQ?feature=shared&t=71
-    save_folder = input("Enter the path to save the video: ") # C:/Users/Prathamesh/Downloads/yt_download/
+    save_folder = get_downloads_folder_path() # C:/Users/Prathamesh/Downloads/yt_download/
     sub_text = input("Enter subtitle of the video: ")
     start_time = get_time_value_from_url(video_url_1)
     end_time = get_time_value_from_url(video_url_2)
