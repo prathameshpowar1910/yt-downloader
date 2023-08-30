@@ -41,10 +41,10 @@ def get_downloads_folder_path():
 
 if __name__ == "__main__":
     video_url_1 = input(
-        "Enter the first YouTube video URL (start): ")  #
+        "Enter the first YouTube video URL (start): ")  # https://youtu.be/dQw4w9WgXcQ?feature=shared&t=1
     video_url_2 = input(
-        "Enter the second YouTube video URL (end): ")  # https://youtu.be/dQw4w9WgXcQ?feature=shared&t=71
-    save_folder = get_downloads_folder_path()  # C:/Users/Prathamesh/Downloads/yt_download/
+        "Enter the second YouTube video URL (end): ")  # https://youtu.be/dQw4w9WgXcQ?feature=shared&t=10
+    save_folder = get_downloads_folder_path() 
     sub_text = input("Enter subtitle of the video: ")
     start_time = get_time_value_from_url(video_url_1)
     end_time = get_time_value_from_url(video_url_2)
