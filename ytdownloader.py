@@ -14,7 +14,7 @@ def get_time_value_from_url(url):
     return None
 
 
-def download_video(url, save_path, start_time, end_time, sub_text):
+def download_video(url, save_path, sub_text,start_time=0, end_time=None):
     try:
         ydl_opts = {
             'format': 'best',
@@ -40,12 +40,23 @@ def get_downloads_folder_path():
 
 
 if __name__ == "__main__":
+
     video_url_1 = input(
-        "Enter the first YouTube video URL (start): ")  # https://youtu.be/dQw4w9WgXcQ?feature=shared&t=1
-    video_url_2 = input(
-        "Enter the second YouTube video URL (end): ")  # https://youtu.be/dQw4w9WgXcQ?feature=shared&t=10
-    save_folder = get_downloads_folder_path() 
+        "Enter the YouTube video URL : ")  #
+    choice = int(input("Do you want to download full video or a part of it ? ( 0 for full and 1 for part ) :"))
+    save_folder = get_downloads_folder_path()  # C:/Users/Prathamesh/Downloads/yt_download/
     sub_text = input("Enter subtitle of the video: ")
-    start_time = get_time_value_from_url(video_url_1)
-    end_time = get_time_value_from_url(video_url_2)
-    download_video(video_url_1, save_folder, start_time, end_time, sub_text)
+    if choice == 0:
+        download_video(video_url_1, save_folder,sub_text)
+    else:
+        # start_time = get_time_value_from_url(video_url_1)
+        # end_time = get_time_value_from_url(video_url_2)
+        start_time = int(input("Enter start time in seconds :"))
+        end_time = int(input("Enter end time in seconds :"))
+        download_video(video_url_1, save_folder, sub_text, start_time, end_time)
+
+    # video_url_2 = input(
+    #     "Enter the second YouTube video URL (end): ")  # https://youtu.be/dQw4w9WgXcQ?feature=shared&t=71
+
+
+
