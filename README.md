@@ -23,7 +23,7 @@ If not installed the enter the following command
 Once installed then enter the following commands to download all the relevant packages
 ```bash
   pip install moviepy
-  pip install pytube
+  pip install yt_dlp
 ```
 
 #### Then just run the downloaded file
